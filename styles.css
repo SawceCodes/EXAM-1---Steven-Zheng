@@ -1,0 +1,345 @@
+/* --- General Styles & Typography --- */
+:root {
+    --primary-color: #4CAF50; /* A fresh green, represents "precision" and "growth" */
+    --secondary-color: #000000; /* Dark grey for professionalism */
+    --accent-color: #FFC107; /* A subtle gold for creativity/luxury */
+    --light-bg: #F8F8F8;
+    --white: #FFFFFF;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; text-align: center; margin-bottom: 2rem; color: var(--primary-color); }
+h3 { font-size: 1.5em; color: var(--text-dark); }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #43A047; /* Slightly darker green */
+}
+
+.btn.secondary-btn {
+    background-color: var(--secondary-color);
+}
+
+.btn.secondary-btn:hover {
+    background-color: #555555;
+}
+
+.section-padding {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?salon-interior,hairdresser') no-repeat center center/cover;
+    color: var(--white);
+    height: 40vh; /* Takes 40% of viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.1;
+}
+
+.hero .tagline {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #E0E0E0;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+    text-align: center;
+    position: sticky; /* Stays at the top when scrolling */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+    color: var(--white);
+    padding: 0 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+/* --- About Section --- */
+.about-content {
+    display: flex;
+    flex-direction: column; /* Stack on small screens */
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; /* Align text within its column */
+}
+
+/* --- Services Section --- */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.service-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.service-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.price-range {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-top: 15px;
+}
+
+/* --- NEW PRICE LIST SECTION STYLES --- */
+.menu-container {
+    display: grid;
+    /* On small screens, 1 column. On larger, fit as many 300px columns as possible */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Space between the "Cutting", "Color", and "Treatments" columns */
+    max-width: 1000px;
+    margin: 30px auto 0;
+}
+
+.menu-category h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.6em;
+    border-bottom: 2px solid var(--light-bg); /* A light line under the category title */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-category li {
+    display: flex; /* This puts the item and price on the same line */
+    justify-content: space-between; /* This pushes them to opposite ends */
+    font-size: 1.1em;
+    padding: 12px 0;
+    border-bottom: 1px dashed #E0E0E0; /* A faint separator for each item */
+}
+
+.menu-category li span:first-child {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.menu-category li span:last-child {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.pricelist-note {
+    text-align: center;
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+/* --- END OF NEW PRICE LIST STYLES --- */
+
+
+/* --- Testimonials Section --- */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.testimonial-item {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-style: italic;
+    text-align: center;
+}
+
+.testimonial-item p {
+    margin-bottom: 10px;
+}
+
+.client-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+/* --- GALLERY SECTION STYLES REMOVED --- */
+
+
+/* --- Contact Section --- */
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info p, .contact-info ul {
+    margin-bottom: 10px;
+}
+
+.contact-info ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 5px;
+}
+
+.cta-message {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* --- Mobile Responsiveness (Media Queries) --- */
+@media (min-width: 768px) {
+    h1 { font-size: 4.5em; }
+    h2 { font-size: 2.8em; }
+
+    .about-content {
+        flex-direction: row; /* Side-by-side on larger screens */
+        text-align: left;
+    }
+    .about-content p {
+        flex: 1; /* Make paragraphs take equal space */
+    }
+
+    .navbar a {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        height: 60vh; /* Shorter hero on mobile */
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero .tagline {
+        font-size: 1.1em;
+    }
+
+    .navbar a {
+        display: block; /* Stack navigation links on mobile */
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .navbar a:last-child {
+        border-bottom: none;
+    }
+
+    .section-padding {
+        padding: 40px 15px; /* Less padding on smaller screens */
+    }
+}
