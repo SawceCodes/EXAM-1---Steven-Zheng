@@ -80,7 +80,7 @@ a:hover {
 
 /* --- Hero Section --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?salon-interior,hairdresser') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero.png') no-repeat center center/cover;
     color: var(--white);
     height: 40vh; /* Takes 40% of viewport height */
     display: flex;
@@ -88,6 +88,33 @@ a:hover {
     align-items: center;
     text-align: center;
     position: relative;
+}
+
+/* ADD THIS ENTIRE NEW BLOCK */
+/* This tells the new wrapper to be horizontal */
+.logo-header {
+    display: flex;
+    justify-content: center; /* Keeps them centered */
+    align-items: center;     /* Vertically aligns the logo and text */
+    gap: 1rem;             /* Creates space BETWEEN the logo and text */
+    flex-wrap: wrap;         /* Lets them stack on tiny mobile screens */
+}
+
+/* MODIFY YOUR .hero-logo STYLE */
+/* We make the logo smaller and remove its margin */
+.hero-logo {
+    max-width: 75px;  /* Make it smaller to fit nicely */
+    height: auto;
+    /* margin-bottom: 1rem; <-- REMOVE this line */
+}
+
+/* MODIFY YOUR .hero h1 STYLE */
+/* We remove the margin so the 'gap' can handle all the spacing */
+.hero h1 {
+    color: var(--white);
+    font-size: 3.5em;
+    /* margin-bottom: 0.5em; <-- REMOVE this line */
+    line-height: 1.1;
 }
 
 .hero-content {
